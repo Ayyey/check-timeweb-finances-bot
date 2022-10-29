@@ -1,7 +1,9 @@
 const sequelize = require('sequelize')
 const UserChat = require('./UserChat')
 module.exports = class UserChatManager {
-    constructor() { }
+    constructor() {
+        this.chats = [];
+    }
     addChatById(chatId) {
         if (!this.isChatExist(chatId)) {
             const chat = new UserChat(chatId)
